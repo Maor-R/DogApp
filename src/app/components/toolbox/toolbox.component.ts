@@ -71,6 +71,9 @@ export class ToolboxComponent {
     this.errorWeight = (this.weight === undefined || this.weight === null)? true:false;
     this.errorAge = (this.age === undefined || this.age === null)?  true:false;
 
+    if(this.firstAdoption && (this.age!==undefined && (this.age<0 || this.age>8))){
+      this.errorAge = true;
+    }
 
     if (!this.errorWeight && this.weight !== undefined && this.weight !== null &&
       !this.errorAge && this.age !== undefined && this.age !== null &&
