@@ -44,8 +44,7 @@ export class ToolboxComponent {
    
         const arr = Object.entries(res.message);
          this.filterBreeds = arr.filter((e: any) => e[1].length > 0);
-         console.log(this.selectedBreed)
-         this.dogService.getImagesBreed(this.selectedBreed).subscribe(
+          this.dogService.getImagesBreed(this.selectedBreed).subscribe(
           (resGib) => {
 
             resGib.message.forEach((e: any) => {
@@ -67,13 +66,11 @@ export class ToolboxComponent {
   }
 
   submit() {
-    if (this.selectedColor === "default") {
-      this.errorSelectedColor = true;
-    }
-    else {
-      this.errorSelectedColor = false;
 
-    }
+    this.errorSelectedColor = this.selectedColor === "default"? true:false;
+    this.errorWeight = (this.weight === undefined || this.weight === null)? true:false;
+    this.errorAge = (this.age === undefined || this.age === null)?  true:false;
+
 
     if (!this.errorWeight && this.weight !== undefined && this.weight !== null &&
       !this.errorAge && this.age !== undefined && this.age !== null &&
@@ -83,7 +80,10 @@ export class ToolboxComponent {
 
       setTimeout(() => {
         alert("Your adoption request has been registered in the system");
-        this.spinner.hide();
+        this.age = undefined ;
+        this.weight = undefined;
+         
+         this.spinner.hide();
       }, 2000);
 
     }
