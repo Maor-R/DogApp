@@ -1,0 +1,103 @@
+<div style="border: 1px gray solid">
+    <h2 style="margin: 0; text-align: center; font-weight: normal;"> Dog App </h2>
+
+    <ul class="ToolboxTabList">
+
+        <li>
+            <button type="button" style="background-color: #EFF6FF; color: #66a3e9; border: 1px solid #A4CAEF;"
+                class="ToolboxTab" (click)="selectedTabIndex = 0">
+                Search
+            </button>
+        </li>
+        <li>
+            <button type="button" style="background-color: #F7FFEF; color: #517F07; border: 1px solid #B0CF8E;"
+                class="ToolboxTab" (click)="selectedTabIndex = 1">
+                Submitting Request
+
+            </button>
+        </li>
+    </ul>
+
+
+    <!--Search-->
+
+    <div class="ToolboxTabContent" [hidden]="selectedTabIndex != 1" style="background-color: #FDFDED;">
+        <div>
+            <h3 class="ToolboxButtonHeader">Dog Adoption</h3>
+            <form name="myForm" #myForm="ngForm">
+                <div>
+                    <label class="ToolBoxSubHeader">Weight</label>
+                    <input type="number" [(ngModel)]="weight" [formControl]="weightControl" min="1" max="100"
+                        title="The range is 1-100 kg" required (change)="errorWeight = (weight!== undefined && (weight<=100 && weight>0)?false:true)"/>
+                </div>
+      
+                <p *ngIf="errorWeight" style="margin-top: 0.2rem; color: red;">Please enter a number between 1 and 100
+                </p>
+
+                <div>
+                    <label class="ToolBoxSubHeader" style="margin-top: 1rem;">Color</label>
+                    <select [(ngModel)]="selectedColor" (change)="selectedColor = $any($event.target).value;errorSelectedColor = selectedColor!=='default'?false:true" required>
+                        <option value="default">Select a dog color</option>
+                        <option *ngFor="let item of colors" [value]="item">{{item}}</option>
+                    </select>
+                </div>
+                <p *ngIf="errorSelectedColor" style="margin-top: 0.2rem; color: red;">Please select a color</p>
+
+                <div>
+                    <label class="ToolBoxSubHeader">
+                        <input style="margin-top: 1rem;" type="checkbox" [(ngModel)]="firstAdoption"
+                            (change)="firstAdoption = !firstAdoption" />
+
+                        <span style="margin-left: 0.75rem;">Is this your first adoption</span>
+                    </label>
+                </div>
+
+                <div>
+                    <label class="ToolBoxSubHeader" style="display: block; margin-top: 1rem;">Age</label>
+                    <input type="number" [(ngModel)]="age" title="The range is 0-20 years" min="0" max="20" required
+                    (change)="errorAge = (age !== undefined && ((age<0 || age>20)  || (firstAdoption && (age<0 || age>8))) )?true:false"
+                        [formControl]="ageControl" />
+                </div>
+
+      
+                <p *ngIf="errorAge && !firstAdoption" style="margin-top: 0.2rem; color: red;">Please enter a number
+                    between 0 and 20.</p>
+                <p *ngIf="errorAge && firstAdoption" style="margin-top: 0.2rem; color: red;">Please enter a number
+                    between 0 and 8</p>
+                <button type="button" style=" margin-top: 1rem;" (click)=" submit()">
+                    Submit
+                </button>
+            </form>
+
+        </div>
+        <br />
+
+    </div>
+
+    <!--Submitting Request-->
+
+    <div class="ToolboxTabContent" [hidden]="selectedTabIndex != 0" style="background-color: #EFF6FF;">
+
+        <div>
+            <label class="ToolBoxSubHeader">List of dog breeds</label>
+            <select [ngModel]="selectedBreed?.text" (change)="selectedBreed.text = $any($event.target).value; createImagesList();">
+                <option *ngFor="let item of filterBreeds" [value]="item[0]">{{item[0]}}</option>
+            </select>
+          
+        </div>
+
+        <div class="container">
+            <div id="dogs">
+                <div *ngFor="let item of listImagesBreedsCurrPage; ">
+                    <img src={{item}} class="zoom-img" />
+                </div>
+            </div>
+
+            <!-- <button class="btn" (click)="getDogs()">Get dogs</button> -->
+        </div>
+        <mat-paginator [length]="listImagesBreeds?.length" aria-label="Select page" [pageSize]="50" (page)=" onPaginateChange($event)"
+        aria-label="Select page">
+    </mat-paginator>
+    </div>
+
+</div>

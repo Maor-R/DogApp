@@ -1,1 +1,10 @@
+
 /* You can add global styles to this file, and also import other style files */
+
+@use '@angular/material' as mat;
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "./style/general.css";
+@import "./style/style.css";
+@import "../node_modules/primeng/resources/themes/nova/theme.css";
+
+

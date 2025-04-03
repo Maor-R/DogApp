@@ -1,0 +1,430 @@
+﻿body {
+    margin: 0;
+    font-family: Arial;
+}
+@media (max-width:700px) {
+    .Footer {
+        display: none;
+    }
+}
+
+@media (min-width:700px) {
+
+    /* hi-res laptops and desktops */
+    .Footer {
+        background: lightgray;
+        /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(lightgray, white);
+        /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(lightgray, white);
+        /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(lightgray, white);
+        /* For Firefox 3.6 to 15 */
+        background: linear-gradient(lightgray, white);
+        /* Standard syntax (must be last) */
+    }
+}
+
+.DraggableElement {
+    border: 1px transparent solid;
+}
+
+.DraggableElement:hover {
+    border: 1px black dashed;
+}
+
+.SelectedDraggableElement {
+    background-color: lightblue;
+    border: 1px gray solid;
+}
+
+.InputText {
+    border: 1px solid #CD0A0A;
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    text-align: center;
+}
+
+.InputText:focus {
+    border-color: #66afe9;
+    outline: 0;
+    /* -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6); */
+}
+
+
+
+.ToolboxTab {
+    white-space: nowrap;
+    background-position: 2px -3px !important;
+    border-bottom: none;
+    color: #BF6F2F;
+    width: 100%;
+}
+
+.ToolboxTabList {
+    display: table;
+    width: 100%;
+    /*background: #FFE79F url(/images/tabbottom.gif) repeat-x bottom;*/
+    margin: 0;
+    padding: 0;
+}
+
+.ToolboxTabList>li {
+    width: 30%;
+    display: table-cell;
+}
+
+.ToolboxTab {
+    cursor: pointer;
+    padding: 4px 6px 4px 25px;
+    margin: 4px 0 0 0;
+    /* text-decoration: none; */
+    background-image: url(/images/tabtri.gif);
+    background-repeat: no-repeat;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 12px;
+    background-clip: padding-box;
+}
+
+.ToolboxButtonHeader {
+    color: #236ABF;
+    clear: both;
+    font-size: 11px;
+    padding: 4px 0px;
+    font-weight: bold;
+}
+
+.ToolboxButtonImage {
+    line-height: 16px;
+    width: 18px;
+    height: 16px;
+    display: inline-block;
+    left: 8px;
+    /* background-image: url('../assets/images/ButtonIcons.png'); */
+    background-repeat: no-repeat;
+}
+
+/** {
+    margin: 0;
+    padding: 0;
+}*/
+
+.ToolboxButton {
+    font-size: 95%;
+    padding: 5px 10px;
+    display: block;
+    border: 1px solid #eee;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+    background-clip: padding-box;
+    margin: 0 .7em 0 0;
+    background-color: #FFF;
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+    line-height: 130%;
+    color: #464646;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 3px #999;
+}
+
+.ToolboxButton:hover {
+    background-color: #3e8e41;
+}
+
+.ToolboxButton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 1px #666;
+    transform: translateY(4px);
+}
+
+a {
+    color: blue;
+    outline: none;
+}
+
+.ToolboxUl {
+    padding: 0;
+    display: table-cell;
+    list-style: none;
+    margin: 5px 0 7px 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.ToolBoxSubHeader {
+    color: #333;
+    font-size: 13px;
+    text-align: left;
+    font-weight: bold;
+    line-height: 150%;
+    margin: 0;
+    padding: 0 0 3px 0;
+    border: none;
+    display: block;
+    white-space: normal;
+    width: 100%;
+}
+
+.ToolboxTabContent {
+    padding: 15px;
+}
+
+
+
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+
+
+
+.input-help {
+    display: none;
+}
+
+input.ng-pristine+.input-help {
+    display: none;
+}
+
+.ng-invalid+.input-help {
+    position: absolute;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    color: firebrick;
+    text-align: left;
+}
+
+table.DataDisplayTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.DataDisplayTable th {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table.DataDisplayTable td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table.DataDisplayTable tr:hover {
+    background-color: #f5f5f5;
+}
+
+table {
+    width: 100%;
+    /* width: fit-content; */
+    /* margin: auto; */
+}
+
+.FormLabel {
+    /* display: block; */
+    margin-bottom: 1.1rem;
+    display: table;
+}
+
+.FormLabelM {
+    /* margin-right: 5rem; */
+    width: 34vw;
+    display: inline-block
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5) !important;
+}
+
+/* input[required] + label:after {
+	content: '*';
+	color: red;
+  } */
+
+
+  .container {
+    display: grid;
+    /* place-items: center; */
+    padding-top: 140px;
+    background: linear-gradient(45deg, var(--purple), var(--darkPink));
+    background-attachment: fixed;
+    margin-top: -70px;
+    min-height: 80vh;
+}
+
+.btn {
+    position: relative;
+    font-size: 20px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 50px;
+    width: 160px;
+    height: 60px;
+    background-color: var(--lightPurple);
+    border-radius: 50px;
+    border: 1px solid var(--lightPurple);
+    color: var(--black);
+}
+
+.btn::after {
+    content: "";
+    background-color: var(--purple);
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s ease
+}
+
+.btn:active::after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+#dogs {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    margin-top: 15px;
+}
+
+.zoom-img {
+    width: 240px;
+    height: 190px;
+    cursor: pointer;
+    object-fit: cover;
+    object-position: center center;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: -3px;
+    filter: grayscale(100%);
+    animation: images 0.5s ease-in;
+}
+
+@keyframes images {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.zoom-img:hover {
+    transition: all 0.4 ease;
+    border: 4px solid var(--lightPurple);
+    filter: grayscale(0);
+}
+
+#wrapInside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--lightPurple);
+}
+
+@media screen and (max-width: 1400px) {
+    #dogs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .zoom-img {
+        width: 200px;
+        height: 160px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .zoom-img {
+        width: 170px;
+        height: 130px;
+    }
+
+    .btn {
+        width: 120px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #dogs {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .zoom-img {
+        width: 140px;
+        height: 90px;
+    }
+
+    .btn {
+        width: 120px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    #wrapInside {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 635px) {
+    #dogs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #wrapInside {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #dogs {
+        grid-template-columns: 1fr
+    }
+
+    .zoom-img {
+        width: 260px;
+        height: 230px;
+    }
+
+    .btn {
+        width: 100px;
+        height: 40px;
+        font-size: 14px;
+    }
+}

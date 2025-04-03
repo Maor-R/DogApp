@@ -1,13 +1,13 @@
 {
-  "name": "certificate-generator-front-end",
-  "version": "0.0.0",
+  "name": "dog-app",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:CertificateGeneratorFrontEnd": "node dist/certificate-generator-front-end/server/server.mjs"
+    "serve:ssr:DogsApp": "node dist/dog-app/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -16,12 +16,18 @@
     "@angular/compiler": "^17.0.0",
     "@angular/core": "^17.0.0",
     "@angular/forms": "^17.0.0",
+    "@angular/material": "^17.1.2",
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/platform-server": "^17.0.0",
     "@angular/router": "^17.0.0",
     "@angular/ssr": "^17.0.10",
+    "angular-moment": "^1.3.0",
     "express": "^4.18.2",
+    "ng-http-loader": "^15.0.0",
+    "primeicons": "^6.0.1",
+    "primeng": "^17.4.0",
+    "quill": "^1.3.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
